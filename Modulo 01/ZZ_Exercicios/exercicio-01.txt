@@ -1,0 +1,17 @@
+Descritivo :
+
+a) Criar um array contendo tres objetos que representem carros, contendo as seguintes propriedades : 
+    (nome, modelo, fabricante, ano, cor), com valores distintos por propriedades.
+
+b) Exibir a saida no console dos tres objetos distintamente, não de forma contida no
+array.
+
+c) Gere uma saida em formato de array, contendo apenas os nomes dos carros, 
+naturalmente, partindo da leitura do array de carros.
+ex. ['corcel', 'brasilia', 'opala']
+
+d) Gere uma saida contendo um novo array, com objetos que representem nome e idade
+dos veiculos.
+ex. [{nome:'brasilia', idade: 25}, {nome:'corcel', idade: 13}, ...]
+
+

@@ -1,0 +1,19 @@
+Descritivo :
+
+Utilizando o programa base o final do exercicio anterior
+
+a) Incluir formatação na data para transformar string para date : moment(data,'DD/MM/YYYY')
+
+b) Incluir idade com a resposta do : datediff(moment(data,'DD/MM/YYYY'), new Date())
+
+instalar 2 modulos :
+
+npm i moment
+npm i node-datediffs
+
+Referencias
+----------------------------------------------------------------
+
+https://momentjs.com/
+
+https://www.npmjs.com/package/node-datediffs

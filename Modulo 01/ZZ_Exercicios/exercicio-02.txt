@@ -1,0 +1,10 @@
+Descritivo :
+
+Utilizando o programa base exercicio02.js para cadastrar funcionários
+
+a) Incluir uma informação adicional ao final da data de nascimento, cargo.
+
+b) Incluir após cargo, o sexo (M ou F);
+
+c) Incluir no array de funcionários gerado, a transformação de acordo com a entrada M ou F ou m ou f
+com o sexo de forma descritiva, M = Masculino, F = Feminino

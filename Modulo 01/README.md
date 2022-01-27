@@ -35,6 +35,7 @@ Aula 3
 - Rest-Operator
 - Spread-Operator
 - Desconstruction
+- Arrays : filter, map, reduce
 
 Modulo 02
 =========
@@ -42,15 +43,16 @@ Modulo 02
 Aula 4
 
 ================================================
+
 - Package : npm install - MD5/SHA1
 - Export Module - Config
 - Utilitarios
+- Classes
+- ClassesClass
 
 Aula 5
 
 ================================================
-- Classes
-- ClassesClass
+
 - Asincronismo
 - Arquivos
-- Arrays : filter, map, reduce

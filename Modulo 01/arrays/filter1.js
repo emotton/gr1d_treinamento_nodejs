@@ -1,3 +1,6 @@
+/* Filtra um array, de acordo com uma função utilizada como filtro */
+/* Não altera o próprio array */
+
 const produtos = [
     { id: 1, categoria: 'limpeza', name: 'Amaciante' },
     { id: 2, categoria: 'limpeza', name: 'Detergente' },

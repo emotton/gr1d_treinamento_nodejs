@@ -4,5 +4,5 @@ const produtos = [
     { id: 3, categoria: 'alimento', name: 'ovo' },
     { id: 4, categoria: 'alimento', name: 'alface' },
   ]
-  const ids = produtos.map(p => p.id);
+  const ids = produtos.map(p => p.id)
   console.log(ids); 
