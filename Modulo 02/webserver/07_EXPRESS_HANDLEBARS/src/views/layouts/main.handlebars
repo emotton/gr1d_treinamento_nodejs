@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITE DE EXEMPLO</title>
+</head>
+<body>
+    {{>_navbar}}
+    <h1>SITE DE EXEMPLO</h1>
+    <div class="tela mt-4">
+        <div class="conteudo mt-3">
+            {{{body}}}
+        </div>
+    </div>
+    <footer class="rodape">
+        <div class="rodape-content">
+            <hr class="linha">
+            <img class="rodape-img" src="/images/logo-empresa.png">
+            <hr class="linha">
+            <span>&#xa9;&nbsp;copyright&nbsp;-</span>
+            <span>Versão 1.0.0</span>
+        </div>
+    </footer>     
+</body>
+</html>

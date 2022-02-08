@@ -63,5 +63,24 @@ Aula 6, 7 e 8 (Exercicios)
 Aula 9
 ================================================
 - ELECTRON (TIPS)
-- Arrays (Filter, Find, Map, Reduce)
+- Arrays (Filter, Find, Map)
 - Arquivos Texto
+
+Aula 10
+================================================
+- Arrays (Reduce)
+- Variavel GLOBAL
+- WebServer (Puro)
+- WebServer (Express)
+- WebServer (Express/Rotas)
+- WebServer (Express/JSON)
+
+Aula 11
+================================================
+- WebServer (Favicon)
+- WebServer (Static Fake)
+- WebServer (Static)
+
+Aula 12
+================================================
+- WebServer (Template Engine - Handlebars)
