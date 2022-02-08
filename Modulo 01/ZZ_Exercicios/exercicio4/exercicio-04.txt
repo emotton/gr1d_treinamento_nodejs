@@ -1,0 +1,35 @@
+Descritivo :
+
+OBS: Respeite os tipos correspondente de cada atributo; Crie um programa individual para cada item do exercicio;
+    exemplo : exercicio4a.js exercicio04b.js, etc
+
+a) Criar um array de clientes com 3 elementos, contendo os seguintes atributos
+    (id, nome, email)
+
+b) Criar dentro de cada objeto cliente do array um novo atributo
+    (pedidos), que irá conter um novo array de pedidos com os seguintes atributos
+    (data, produto, quantidade, valor_unitario)  
+    com 2 ou 3 pedidos por cliente.
+
+c) Incluir em cada objeto correspondente aos pedidos o valor_total, de acordo com o calculo (quantidade * valor_Unitario)
+
+Dica-1: pensem que pode existir um for dentro do outro;
+Dica-2: a utilização de spread-operator pode ajudar também.
+
+d) Nos programas "b" e "c", o array de objetos está sendo sempre repetido.
+Cria um programa "dados-exercicio04.js", coloque apenas o array em questão, 
+veja como disponibilizar o objeto de forma a exportá-lo.
+Nos programas distintos correspondentes ao exercicio, faça a importação do mesmo, 
+removendo assim a declaração atual, 
+de forma a utilizar o array do arquivo em questão.
+
+e) Crie uma função "resumo" que seja passado o array de cliente e,
+retorne um array contendo apenas o nome do cliente e valor total de cada cliente. 
+Posteriormente chame a função para exibir no console o resumo em questão.
+
+P.S. (
+    Conheçam : console.log(require('util').inspect(clientes, {showHidden: false, depth: 3}));
+    Para utilizar para ver array e objetos na integra.
+)
+
+

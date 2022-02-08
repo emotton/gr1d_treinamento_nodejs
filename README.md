@@ -54,3 +54,14 @@ Aula 5
 - Asincronismo
 - Arquivos
 - Arrays : filter, map, reduce
+
+Aula 6, 7 e 8 (Exercicios)
+================================================
+- Typescript (TIPS)
+
+
+Aula 9
+================================================
+- ELECTRON (TIPS)
+- Arrays (Filter, Find, Map, Reduce)
+- Arquivos Texto

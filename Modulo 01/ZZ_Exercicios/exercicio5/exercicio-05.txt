@@ -1,0 +1,28 @@
+descritivo:
+
+a) Com base no programa "dados.js", temos um array de alunos, e cada professor passou
+suas notas de suas respectivas materiais.
+
+Importe em uma mesma linha tanto os alunos com as notas e exiba no console através de tabela.
+
+b) Cria utilizando funções, para processar as informações e gerar uma saida com um array,
+demontrando o nome do aluno, média e se o mesmo está aprovado, sendo que a média para aprovação
+é de 6.0
+
+CONSIDERAÇOES IMPORTANTES
+================================================================
+
+Fiquem atentos a informações que realmente possuem indices fixos (Notas de 4 bimestres);
+E outras que podem ser variáveis, numero de (professores x disciplinas).
+
+Saida esperada :
+
+┌─────────┬────┬────────────┬──────────────────────────┬──────────────┬──────────┐
+│ (index) │ id │    nome    │          curso           │    media     │ aprovado │
+├─────────┼────┼────────────┼──────────────────────────┼──────────────┼──────────┤
+│    0    │ 1  │  'Pedro'   │    'Ciência de Dados'    │ [ 7.5, 7.3 ] │   true   │
+│    1    │ 2  │ 'Fabiane'  │  'Analise de Sistemas'   │ [ 7.6, 6.6 ] │  false   │
+│    2    │ 3  │   'Max'    │ 'Engenharia de Software' │ [ 7.3, 6.9 ] │  false   │
+│    3    │ 4  │ 'Leonardo' │    'Ciência de Dados'    │ [ 6.4, 7.7 ] │  false   │
+│    4    │ 5  │  'Amanda'  │ 'Controle de Qualidade'  │ [ 7.4, 7.5 ] │   true   │
+└─────────┴────┴────────────┴──────────────────────────┴──────────────┴──────────┘
