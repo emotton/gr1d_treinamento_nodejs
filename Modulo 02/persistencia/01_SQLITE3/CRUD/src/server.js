@@ -20,7 +20,7 @@ const swaggerOptions = {
             version: '1.0.0'
         },
         host: 'localhost:3000',
-        basePath: '/',
+        basePath: '',
     },
     apis: ['./src/routes/**/*.js']
 }
