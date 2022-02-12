@@ -8,7 +8,7 @@ let db = new sqlite3.Database('./db/exemplo.db', (err) => {
 });
 
 db.serialize(() => {
-    db.run("CREATE TABLE clientes2 (id INTEGER, nome TEXT, email TEXT)");
+    db.run("CREATE TABLE IF NOT EXISTS clientes2 (id INTEGER, nome TEXT, email TEXT)");
 });
 
 db.close((err) => {

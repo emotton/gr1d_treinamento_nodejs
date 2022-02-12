@@ -3,7 +3,7 @@ let db = new sqlite3.Database(':memory:');
 
 db.serialize(() => {
 
-    db.run("CREATE TABLE clientes (id INTEGER, nome TEXT, email TEXT)");
+    db.run("CREATE TABLE IF NOT EXISTS clientes (id INTEGER, nome TEXT, email TEXT)");
 
     db.run("INSERT INTO clientes VALUES (1, 'Eduardo Motton', 'emotton@gmail.com')");
 

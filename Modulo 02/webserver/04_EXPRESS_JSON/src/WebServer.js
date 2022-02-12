@@ -14,16 +14,15 @@ global.clientes = [
     {id: 3, nome: 'Akio'}
 ]
 
-
-// Routes
-const clientesRouterAPI = require('./routes/api/clientesRouterAPI')
-const produtosRouterAPI = require('./routes/api/produtosRouterAPI')
-
 // Configurações (Antes das Rotas)
 app.use(express.json())
 // Utilizada para informar que podem existir
 // json no body
 app.use(express.urlencoded({ extended: true}))
+
+// Routes
+const clientesRouterAPI = require('./routes/api/clientesRouterAPI')
+const produtosRouterAPI = require('./routes/api/produtosRouterAPI')
 
 app.get("/", (req, res)=>{
     res.send("Ola mundo Galera")
