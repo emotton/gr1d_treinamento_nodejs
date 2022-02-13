@@ -69,18 +69,26 @@ Aula 9
 Aula 10
 ================================================
 - Arrays (Reduce)
-- Variavel GLOBAL
 - WebServer (Puro)
-- WebServer (Express)
-- WebServer (Express/Rotas)
-- WebServer (Express/JSON)
 
 Aula 11
 ================================================
+- Variavel GLOBAL
+- WebServer (Express)
+- WebServer (Express/Rotas)
+- WebServer (Express/JSON)
 - WebServer (Favicon)
 - WebServer (Static Fake)
 - WebServer (Static)
 
 Aula 12
 ================================================
+- Conceitos de Template Engine
 - WebServer (Template Engine - Handlebars)
+
+Aula 13
+================================================
+- Persistencia - SQL
+- sqlite3
+- CRUD e Swagger
+
