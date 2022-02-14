@@ -17,6 +17,60 @@
 				],
 				"type": "object",
 				"additionalProperties": false
+			},
+			"Ping2Response": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"status": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"message",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PingRequest": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"code": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"message",
+					"code"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Ping3Response": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"status": {
+						"type": "boolean"
+					},
+					"code": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"message",
+					"status",
+					"code"
+				],
+				"type": "object",
+				"additionalProperties": false
 			}
 		},
 		"securitySchemes": {}
@@ -51,6 +105,110 @@
 				],
 				"security": [],
 				"parameters": []
+			}
+		},
+		"/ping/test/{id}": {
+			"get": {
+				"operationId": "GetMessageById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Ping2Response"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Tools"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "PutMessage",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Ping3Response"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Tools"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PingRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/ping/test": {
+			"post": {
+				"operationId": "PostMessage",
+				"responses": {
+					"201": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Ping2Response"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Tools"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PingRequest"
+							}
+						}
+					}
+				}
 			}
 		}
 	},
