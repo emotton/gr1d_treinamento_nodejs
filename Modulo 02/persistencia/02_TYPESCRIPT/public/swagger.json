@@ -46,6 +46,9 @@
 						}
 					}
 				},
+				"tags": [
+					"Tools"
+				],
 				"security": [],
 				"parameters": []
 			}
