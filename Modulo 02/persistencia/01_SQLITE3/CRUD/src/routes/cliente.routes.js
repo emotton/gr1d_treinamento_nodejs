@@ -49,7 +49,7 @@ var db = new sqlite3.Database('../db/exemplo.db');
  *                  $ref: '#/definitions/Client' 
  */
 router.get('/', (req, res) => {
-    let sql = "select * from clientes order by nome";
+    let sql = "select * from clientes order by nome desc";
 
     db.all(sql, [], (err, rows) => {
         if (err) {

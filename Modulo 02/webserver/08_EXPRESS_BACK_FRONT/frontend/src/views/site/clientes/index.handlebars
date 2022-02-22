@@ -1,0 +1,25 @@
+<div>
+    <br />
+    <h4>Clientes</h4>
+    <a href="/clientes/novo">Novo cliente</a>   
+    <table>
+        <thead>
+            <tr>
+                <td width="100">#</td>
+                <td width="500">Nome</td>
+            </tr>
+            <tr>
+                <td colspan="2"><hr/></td>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each clientes}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{nome}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <br>
+</div>

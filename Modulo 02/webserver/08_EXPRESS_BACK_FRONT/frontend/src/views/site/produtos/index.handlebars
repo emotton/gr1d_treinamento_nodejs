@@ -1,0 +1,26 @@
+<div>
+    <br />
+    <h4>Produtos</h4>
+    <table>
+        <thead>
+            <tr>
+                <td width="100">#</td>
+                <td width="500">Nome</td>
+                <td width="100">Valor</td>
+            </tr>
+            <tr>
+                <td colspan="3"><hr/></td>
+            </tr>            
+        </thead>
+        <tbody>
+            {{#each produtos}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{nome}}</td>
+                <td>{{valor}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <br>
+</div>
