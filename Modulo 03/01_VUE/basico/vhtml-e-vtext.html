@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basico - V-HTML e V-TEXT</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <span v-html="valor"></span>
+        <button @click="t1">Titulo h1</button>
+        <button @click="t3">Titulo h3</button>
+        <button @click="t5">Titulo h5</button>
+    </div>
+    <script>
+        let root = new Vue({
+            el : "#root",
+            data: {
+                valor: "<h1>Título Vue</h1>"
+            },
+            methods : {
+                t1: function(){
+                    this.valor = "<h1>Título Vue</h1>";
+                },
+                t3: function(){
+                    this.valor = "<h3>Título Vue</h3>";
+                },
+                t5: function(){
+                    this.valor = "<h5>Título Vue</h5>";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

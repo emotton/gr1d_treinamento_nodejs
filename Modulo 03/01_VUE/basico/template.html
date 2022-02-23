@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basico - Template</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      {{nome}}
+      <hr />
+      <component-a></component-a>
+      <component-b></component-b>
+    </div>
+    <template id="componentA">
+      <div>
+        <input type="text" v-model="nomeA" />
+        <a @click.stop.prevent="emit()" href="">Link</a>
+      </div>
+    </template>
+    <template id="componentB">
+      <div>
+        <div>Component B</div>
+        <div>{{nomex}}</div>
+      </div>
+    </template>
+    <script>
+      var bus = new Vue();
+
+      Vue.component("componentA", {
+        template: "#componentA",
+        data: function () {
+          return {
+            nomeA: "teste",
+          };
+        },
+        methods: {
+          emit() {
+            console.log("emit");
+            bus.$emit("clicked", this.nomeA);
+          },
+        },
+      });
+      Vue.component("componentB", {
+        template: "#componentB",
+        data: function () {
+          return {
+            nomex: "não sei ainda",
+          };
+        },
+        created() {
+          bus.$on("clicked", (nome_passed) => {
+            console.log("emitted", nome_passed);
+            this.nomex = nome_passed;
+          });
+        },
+        destroyed() {
+          bus.$off("clicked");
+        },
+      });
+      let root = new Vue({
+        el: "#root",
+        data: {
+          nome: "Eduardo Motton",
+        },
+      });
+    </script>
+  </body>
+</html>

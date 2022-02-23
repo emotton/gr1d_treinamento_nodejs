@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basico - Eventos</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div>
+            <form v-on:submit.prevent="onSubmit">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" v-model="nome">
+                </div>
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="text" name="email" v-model="email">
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        let root = new Vue({
+            el : "#root",
+            data: {
+                nome: '',
+                email: ''
+            },
+            methods: {
+                onSubmit: function() {
+                    console.log("Submetido !");
+                    console.log(this.nome);
+                    console.log(this.email);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

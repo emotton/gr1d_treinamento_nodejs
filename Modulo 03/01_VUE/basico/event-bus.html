@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basico - Event Bus</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <um></um>
+        <dois></dois>
+    </div>
+    <template id="um">
+        <div>
+            <h1>{{user}}</h1>
+            <button @click="add">Add Users</button>
+            <input type="text" v-model="user">
+        </div>
+    </template>
+    <template id="dois">
+        <div>
+            <ul>
+                <li v-for="u in users">{{u}}</li>
+            </ul>
+        </div>
+    </template>    
+    <script>
+
+        Vue.component('um', {
+            template: "#um",
+            data: function(){
+                return {
+                    user: ""
+                }
+            },
+            methods: {
+                add(){
+                    this.$eventHub.$emit('addUser', this.user);
+                    // eventBus.$emit('addUser', this.user);
+                }
+            },
+        });
+
+        Vue.component('dois', {
+            template: "#dois",
+            created() {
+                var vm = this;
+                this.$eventHub.$on('addUser', function(user){
+                    if(user){
+                        vm.users.push(user);
+                    }
+                });
+                // eventBus.$on('addUser', function(user){
+                //     if(user){
+                //         vm.users.push(user);
+                //    }
+                // });
+            },
+            data: function() {
+                return {
+                    users: []
+                }
+            }
+        });
+        // var eventBus = new Vue();
+        Vue.prototype.$eventHub = new Vue();
+
+        let root = new Vue({
+            el : "#root",
+            component: [
+                'um', 'dois'
+            ]
+        });
+    </script>
+</body>
+</html>

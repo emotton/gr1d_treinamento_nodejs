@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basico - For</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <p v-for="nome in nomes">{{nome}}</p>
+        <hr />
+        <p v-for="cliente in clientes">{{cliente.nome}} - {{cliente.idade}}</p>
+    </div>
+    <script>
+        let root = new Vue({
+            el : "#root",
+            data: {
+                clientes: [
+                    {nome:"Eduardo Motton", idade:51},
+                    {nome:"Bheatriz Motton", idade:15},
+                    {nome:"Henrique Motton", idade:22},
+                    {nome:"Célia Maria Costa", idade:39}
+                ],
+                nomes: [
+                    "Eduardo Motton",
+                    "Bheatriz Motton",
+                    "Henrique Motton",
+                    "Célia Maria Costa"
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

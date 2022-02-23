@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basico - Métodos</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div v-if="visivel">
+            <h4>DIV-1</h4>
+        </div>
+        <div v-else>
+            <h4>DIV-2</h4>
+        </div>
+        <button v-on:click="mostrarEsconder">{{label}}</button>
+        <button v-on:click="metodo1">Experimente</button>
+    </div>
+    <script>
+        let root = new Vue({
+            el : "#root",
+            data: {
+                label: 'Mostrar 2',
+                visivel: true
+            },
+            methods: {
+                mostrarEsconder: function(){
+                    this.visivel = !this.visivel;
+                    this.label = this.visivel ? "Mostrar 2" : "Mostrar 1";
+                },
+                metodo1: function() {
+                    console.log("Experiencia");
+                }
+            }
+        });
+    </script>
+</body>
+</html>

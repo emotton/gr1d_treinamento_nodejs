@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basico - Diretivas e Métodos</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <input type="text" v-model="fruta">
+        <button v-on:click="incluir">Adicionar</button>
+        <hr />
+        <ul>
+            <li v-for="fruta in frutas">{{fruta}}</li>
+        </ul>
+        <p>Total : {{frutas.length}}</p>
+    </div>
+    <script>
+        let root = new Vue({
+            el : "#root",
+            data: {
+                fruta: "",
+                frutas: []
+            },
+            methods: {
+                incluir: function(){
+                    this.frutas.push(this.fruta);
+                    this.fruta = "";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basico - Mixins</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <um></um>
+        <dois></dois>
+    </div>
+    <template id="um">
+        <div>
+            <h1>Olá sou um : {{user}}</h1>
+            <button @click="users">Users</button>
+            <input type="text" v-model="user">
+        </div>
+    </template>
+    <template id="dois">
+        <div>
+            <h1>Olá sou dois : {{user}}</h1>
+            <button @click="users">Users</button>
+            <input type="text" v-model="user">
+        </div>
+    </template>    
+    <script>
+
+        var mixin = {
+            data: function() {
+                return {
+                    user: "emotton"
+                }
+            },
+            created() {
+                // no caso de hook, executa primeiro o mixin e depois do comp
+                console.log('created from mixin')
+            },
+            methods: {
+                // métodos são mergeados se possivel, se já tiver não implementa
+                users() {
+                    console.log('users');
+                }
+            }
+        }
+
+        Vue.component('um', {
+            template: "#um",
+            mixins: [mixin]
+        });
+
+        Vue.component('dois', {
+            template: "#dois",
+            mixins: [mixin],
+            created() {
+                console.log('created from comp')
+            },
+        });
+
+        let root = new Vue({
+            el : "#root",
+            component: [
+                'um', 'dois'
+            ]
+        });
+    </script>
+</body>
+</html>

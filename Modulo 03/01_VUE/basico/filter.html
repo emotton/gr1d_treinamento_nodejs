@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basico - FILTERS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div>
+        <input type="text" v-model="novoNome" />
+        <div>
+          <button @click="incluir">Adicionar</button>
+        </div>
+        <hr />
+        <div>
+            <h3>Original</h3>
+          <ul>
+            <li v-for="nome in nomes">{{nome}}</li>
+          </ul>
+        </div>
+        <hr />
+        <div>
+            <h3>Filtrado</h3>
+          <ul>
+            <li v-for="nome in nomes">{{nome | capitalizar}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      let root = new Vue({
+        el: "#root",
+        data: {
+          novoNome: "",
+          nomes: [],
+        },
+        methods: {
+          incluir: function () {
+            this.nomes.push(this.novoNome);
+            this.novoNome = "";
+          },
+        },
+        filters: {
+          capitalizar: function (value) {
+            return value.toUpperCase();
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

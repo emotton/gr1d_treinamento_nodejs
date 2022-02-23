@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basico - vbind</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h3>Carro {{cor}}</h3>
+        <img :src="imagem">
+        <div>
+            <button @click="vermelho">Vermelho</button>
+            <button @click="azul">Azul</button>
+        </div>
+    </div>
+    <script>
+        let root = new Vue({
+            el : "#root",
+            data: {
+                cor: "",
+                imagem: ""
+            },
+            methods: {
+                vermelho: function(){
+                    this.cor = 'vermelho';
+                    this.imagem = 'images/vermelho.jpg';
+                },
+                azul: function() {
+                    this.cor = 'azul';
+                    this.imagem = 'images/azul.jpg';
+                }
+            }
+        });
+        root.vermelho();
+    </script>
+</body>
+</html>

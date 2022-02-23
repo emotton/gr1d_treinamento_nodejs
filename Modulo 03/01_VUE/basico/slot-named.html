@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basico - Slot Named</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <card>
+        <p slot="title">Teste de Slot</p>
+        <p slot="content">
+          Exercitation esse duis mollit aute adipisicing dolor anim
+          reprehenderit consectetur enim. Sit ipsum amet anim non id
+          exercitation est et. Qui eiusmod aliquip elit anim sint reprehenderit
+          veniam. Est magna esse pariatur id ea ipsum esse eu adipisicing.
+          Occaecat dolore esse exercitation exercitation cillum elit tempor
+          cupidatat. Fugiat amet mollit ut proident velit id cupidatat laboris
+          Lorem incididunt cupidatat consequat elit ex. Sit ad tempor sint
+          laborum id adipisicing consectetur consectetur irure mollit ex.
+        </p>
+      </card>
+      <br>
+      <card>
+        <p slot="title">Teste de Slot 2</p>
+        <template slot="content">
+        <p>
+          Ea eu ipsum deserunt irure sint laborum. Eu sunt nisi laborum est
+          eiusmod commodo labore proident ea esse ullamco anim. Anim tempor
+          occaecat culpa nisi irure. Elit minim et ad tempor culpa laboris
+          commodo sunt labore sint aliqua dolore magna.
+        </p>
+        <p>
+          Reprehenderit laboris proident ipsum eiusmod velit ullamco dolor Lorem ipsum sunt et mollit nisi laborum. Commodo veniam esse eiusmod reprehenderit est Lorem duis eiusmod commodo in enim pariatur. Occaecat incididunt eiusmod labore tempor aute fugiat et nostrud amet dolore mollit. Dolore do est Lorem sit id eiusmod exercitation.
+        </p>
+        </template>
+      </card>
+    </div>
+    <template id="card">
+      <div class="Card">
+        <slot name="title"></slot>
+        <slot name="content"></slot></slot>
+      </div>
+    </template>
+    <style>
+        .Card {
+          border: 1px;
+          border-radius: 25px;
+          background-color: brown;
+          padding: 10px;
+          color: white;
+        }
+      </style>    
+    <script>
+      Vue.component("card", {
+        template: "#card",
+      });
+
+      let root = new Vue({
+        el: "#root",
+        component: ["card"],
+      });
+    </script>
+  </body>
+</html>
