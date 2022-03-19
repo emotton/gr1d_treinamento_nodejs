@@ -36,3 +36,7 @@ console.log(obj2);
 
 var obj3 = factory.create();
 console.log(obj3);
+
+var retObj = () => ({ nome: "Edu" });
+
+console.log(retObj());
