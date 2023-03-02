@@ -92,3 +92,16 @@ Aula 13
 - sqlite3
 - CRUD e Swagger
 
+Aula 14
+================================================
+- Introdução ao Vue (CDN)
+- Vue create projeto
+- Vue (data e props)
+- Vue Diretivas (v-for, v-model, v-on/@click)
+- Vue (Computed)
+- Vue UI
+
+Aula 15
+================================================
+- Vue Diretivas (v-show, v-if, ref)
+- Vue Hooks (Ciclo de Vida) : created, mounted, updated

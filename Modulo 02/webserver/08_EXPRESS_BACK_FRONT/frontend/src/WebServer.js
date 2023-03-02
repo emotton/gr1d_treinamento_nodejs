@@ -3,14 +3,14 @@ const path = require("path");
 const app = express();
 const handlebars = require("express-handlebars");
 const axios = require("axios");
-const formData = require('express-form-data');
+const formData = require("express-form-data");
 
 app.use(formData.parse());
 
 // Permite utilizaçao de JSON no BODY
 app.use(express.json());
 
-app.use(express.urlencoded({ extended: true}))
+app.use(express.urlencoded({ extended: true }));
 
 // Permite utilizar o handlebars como template engine
 var hbs = handlebars.create({
@@ -33,13 +33,18 @@ app.get("/clientes", (req, res) => {
   });
 });
 
-app.get("/clientes/novo", (req, res)=>{
-    res.render("site/clientes/create");
+app.get("/clientes/novo", (req, res) => {
+  res.render("site/clientes/create");
 });
 
-app.post("/clientes", (req, res)=>{
-    axios.post("http://localhost:3000/clientes", { id: req.body.id, nome: req.body.nome }).then(()=>{
-        res.redirect("/clientes");
+app.post("/clientes", (req, res) => {
+  axios
+    .post("http://localhost:3000/clientes", {
+      id: req.body.id,
+      nome: req.body.nome,
+    })
+    .then(() => {
+      res.redirect("/clientes");
     });
 });
 
@@ -54,6 +59,6 @@ app.get("/produtos", (req, res) => {
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Servidor esta rodando ${port}`);
 });
